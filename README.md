@@ -39,7 +39,8 @@ pip install -r requirements.txt
 ├── models/               # Trained models and tokenizers
 │   ├── final_model.pt    # Train separately or download from provided link
 │   └── final_model_tokenizer/
-└── requirements.txt      # Project dependencies
+├── requirements.txt      # Project dependencies
+├── ... other files ...
 ```
 
 ## Pre-trained Model
