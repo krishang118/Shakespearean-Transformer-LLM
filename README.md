@@ -7,7 +7,7 @@ A from-scratch transformer-based large language model that is trained on, and ge
 - Custom transformer architecture implementation
 - Hugging Face's ByteLevelBPE tokenizer trained on Shakespeare's works
 - Coherence-focused training with custom loss functions
-- Text generation with optimized parameters (temperature: 0.11, top-p: 0.89)
+- Text generation with optimized parameters for coherence
 - Character-aware generation preserving dialogue structure
 - Early stopping and model checkpointing
 - GPU acceleration support (CUDA for NVIDIA GPUs, MPS for Apple Silicon)
@@ -95,7 +95,6 @@ The model uses a transformer architecture with:
 The model uses the following default parameters for text generation:
 - Temperature: 0.11 (controls randomness)
 - Top-p: 0.89 (nucleus sampling)
-- Max length: 100 tokens
 
 ## Contributing
 
