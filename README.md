@@ -29,7 +29,6 @@ pip install -r requirements.txt
 ## Project Structure
 
 ```
-.
 ├── config.py             # Configuration settings
 ├── generate.py           # Text generation script
 ├── train.py              # Model training script
