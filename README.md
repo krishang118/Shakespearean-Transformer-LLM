@@ -1,18 +1,18 @@
-# Shakespearean Language Model
+# Shakespearean-Transformer-LLM
 
-A transformer-based language model trained on Shakespeare's works, capable of generating text in the style of the Bard. This project implements a custom transformer architecture and training pipeline from scratch, focusing on generating coherent and stylistically accurate Shakespearean text.
+A from-scratch transformer-based large language model that is trained on and generates Shakespearean text. This project implements a custom transformer architecture and training pipeline, focusing on generating coherent and stylistically accurate text in the style of the Bard.
 
-## 🎭 Features
+## Features
 
 - Custom transformer architecture implementation
-- BPE (Byte Pair Encoding) tokenizer trained on Shakespeare's works
+- Hugging Face's ByteLevelBPE tokenizer trained on Shakespeare's works
 - Coherence-focused training with custom loss functions
-- Text generation with temperature and top-p sampling
+- Text generation with optimized parameters (temperature: 0.11, top-p: 0.89)
 - Character-aware generation preserving dialogue structure
 - Early stopping and model checkpointing
-- MPS (Metal Performance Shaders) support for Apple Silicon
+- GPU acceleration support (CUDA for NVIDIA GPUs, MPS for Apple Silicon)
 
-## 📋 Requirements
+## Requirements
 
 - Python 3.10+
 - PyTorch 2.0+
@@ -26,39 +26,38 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 .
-├── config.py           # Configuration settings
-├── generate.py         # Text generation script
-├── train.py           # Model training script
-├── tokenizer.py       # Custom tokenizer implementation
-├── data/              # Training data and tokenizer files
-│   └── shakespeare.txt
-├── models/            # Trained models and tokenizers
-│   ├── final_model.pt
+├── config.py             # Configuration settings
+├── generate.py           # Text generation script
+├── train.py              # Model training script
+├── tokenizer.py          # Tokenizer implementation
+├── data/                 # Training data and tokenizer files
+│   ├── shakespeare.txt
+│   └── tokenizer/        
+├── models/               # Trained models and tokenizers
+│   ├── final_model.pt    # Train separately or download from provided link
 │   └── final_model_tokenizer/
-└── requirements.txt   # Project dependencies
+└── requirements.txt      # Project dependencies
 ```
 
-## 📥 Pre-trained Model
+## Pre-trained Model
 
 The pre-trained model is available for download from Google Drive:
 
-[Download Pre-trained Model (final_model.pt)](https://drive.google.com/file/d/YOUR_FILE_ID/view?usp=sharing)
+[Download Pre-trained Model (final_model.pt)](https://drive.google.com/file/d/1Uta3DRXaVfUdRgS51vrhIU37pbtitRay/view?usp=sharing)
 
 After downloading:
-1. Create a `models` directory in the project root
-2. Place the downloaded `final_model.pt` file in the `models` directory
-3. The model will be automatically loaded when running `generate.py`
+1. Place the downloaded `final_model.pt` file in the `models` directory, present in the main project directory.
+2. The model will automatically be loaded when running `generate.py`.
 
-Note: The model file is approximately 254MB. Make sure you have sufficient storage space.
-
-## 🚀 Usage
+## Usage
 
 ### Training the Model
 
+After you have cloned this repository on your local machine, you would have to train the model from scratch yourself, or download and load the pre-trained model.
 To train the model from scratch:
 
 ```bash
@@ -66,63 +65,41 @@ python train.py
 ```
 
 The training script will:
-1. Train a custom BPE tokenizer on Shakespeare's works
+1. Train the ByteLevelBPE tokenizer on Shakespeare's works
 2. Initialize the transformer model
-3. Train the model with early stopping
-4. Save the best model and tokenizer
+3. Train the model (till 15 epochs, with learning rate 1e-4, and batch size 32) with early stopping
+4. Save the model and tokenizer
 
 ### Generating Text
 
-To generate Shakespearean text:
+An example of generating Shakespearean text:
 
 ```bash
 python generate.py --prompt "HAMLET: To be, or not to be, that is the question"
 ```
 
-Example prompts that work well:
-1. `"HAMLET: To be, or not to be, that is the question"`
-2. `"JULIET: O Romeo, Romeo! wherefore art thou Romeo?"`
-3. `"MACBETH: Is this a dagger which I see before me?"`
-4. `"PORTIA: The quality of mercy is not strain'd"`
-5. `"IAGO: O, beware, my lord, of jealousy"`
-
-## 🎯 Model Architecture
+## Model Architecture
 
 The model uses a transformer architecture with:
-- 6 transformer layers
-- 8 attention heads
-- 512 embedding dimensions
-- 2048 feed-forward dimensions
+- 8 transformer layers
+- 12 attention heads
+- 768 embedding dimensions
+- 3072 feed-forward dimensions
 - Learned positional embeddings
 - Layer normalization
 - Dropout for regularization
 
-## 🎨 Generation Parameters
+## Generation Parameters
 
-The model uses the following parameters for text generation:
+The model uses the following default parameters for text generation:
 - Temperature: 0.11 (controls randomness)
 - Top-p: 0.89 (nucleus sampling)
 - Max length: 100 tokens
-- No repetition penalty
 
-## 📊 Training Details
+## Contributing
 
-- Batch size: 32
-- Learning rate: 3e-4 with warmup
-- Early stopping patience: 5 epochs
-- Validation split: 15%
-- Training epochs: 15 (with early stopping)
+Contributions are welcome!
 
-## 🤝 Contributing
+## License
 
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🙏 Acknowledgments
-
-- Shakespeare's works for the training data
-- PyTorch team for the deep learning framework
-- Hugging Face for the transformers library
+Distributed under the MIT License.  
