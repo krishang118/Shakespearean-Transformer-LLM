@@ -58,6 +58,7 @@ After downloading:
 ### Training the Model
 
 After you have cloned this repository on your local machine, you would have to train the model from scratch yourself, or download and load the pre-trained model.
+
 To train the model from scratch:
 
 ```bash
