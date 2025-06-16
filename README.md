@@ -45,7 +45,7 @@ pip install -r requirements.txt
 
 ## Pre-trained Model
 
-The pre-trained model is available for download from a Google Drive link below:
+The pre-trained model is available for download from a Google Drive link:
 
 [Download Pre-trained Model (final_model.pt)](https://drive.google.com/file/d/1Uta3DRXaVfUdRgS51vrhIU37pbtitRay/view?usp=sharing)
 
