@@ -1,9 +1,6 @@
-# macOS system files
 .DS_Store
 .AppleDouble
 .LSOverride
-
-# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -25,16 +22,11 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-
-# Virtual Environment
 venv/
 ENV/
-
-# IDE
 .idea/
 .vscode/
 *.swp
 *.swo
-
 # Logs
 *.log 
