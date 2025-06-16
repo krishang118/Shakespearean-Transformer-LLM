@@ -71,7 +71,7 @@ The training script will:
 3. Train the model (till 15 epochs, with learning rate 1e-4, and batch size 32) with early stopping
 4. Save the model and tokenizer
 
-### Generating Text
+### Generating Output Text
 
 An example of generating Shakespearean text:
 
