@@ -21,7 +21,7 @@ A from-scratch transformer-based large language model that is trained on, and ge
 - tokenizers 0.15+
 - tqdm 4.64+
 
-Install dependencies:
+Install the dependencies:
 ```bash
 pip install -r requirements.txt
 ```
@@ -59,7 +59,7 @@ After downloading:
 
 After you have cloned this repository on your local machine, you would have to train the model from scratch yourself, or download and load the pre-trained model.
 
-To train the model from scratch:
+To train the model from scratch, run the training script:
 
 ```bash
 python train.py
@@ -69,11 +69,11 @@ The training script will:
 1. Train the ByteLevelBPE tokenizer on Shakespeare's works
 2. Initialize the transformer model
 3. Train the model (till 15 epochs, with learning rate 1e-4, and batch size 32) with early stopping
-4. Save the model and tokenizer
+4. Save the model and the tokenizer
 
 ### Generating Output Text
 
-An example of generating Shakespearean text:
+An example of how to generate Shakespearean text:
 
 ```bash
 python generate.py --prompt "HAMLET: To be, or not to be, that is the question"
