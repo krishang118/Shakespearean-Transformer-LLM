@@ -73,7 +73,7 @@ The training script will:
 
 ### Generating Output Text
 
-An example of how to generate Shakespearean text:
+An example of how to generate the Shakespearean text:
 
 ```bash
 python generate.py --prompt "HAMLET: To be, or not to be, that is the question"
