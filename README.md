@@ -1,5 +1,5 @@
 # Shakespearean Transformer-based LLM
-
+ 
 A from-scratch transformer-based large language model that is trained on, and generates Shakespearean text. This project implements a custom transformer architecture and training pipeline, focusing on generating coherent and stylistically accurate text in the style of the Bard.
 
 ## Features
